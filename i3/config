@@ -35,7 +35,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # autostart terminal and browser
-exec --no-startup-id "i3-msg 'workspace 1; exec alacritty; workspace2; exec google-chrome'"
+exec --no-startup-id "i3-msg 'workspace 1; exec alacritty; workspace 2; exec google-chrome'"
 
 # autostart picom
 exec --no-startup-id picom -CGb
