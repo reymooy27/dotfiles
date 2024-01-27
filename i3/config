@@ -280,6 +280,6 @@ bar {
                 urgent_workspace   #2f343a #900000 #ffffff
                 binding_mode       #2f343a #900000 #ffffff
             }
-        font pango:CaskaydiaCove Nerd Font Mono 8
+        font pango:CaskaydiaCove Nerd Font Mono 10
 
 }
