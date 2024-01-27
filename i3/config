@@ -268,7 +268,7 @@ bar {
         status_command ~/.config/i3/bumblebee-status/bumblebee-status \
         -m pomodoro network spacer memory spacer date spacer time spacer battery \
         -p time.format="%H:%M CW %V" date.format="%a, %b %d %Y" \
-        -t solarized-powerline
+        -t iceberg-contrast
 
         i3bar_command i3bar --transparency
 
