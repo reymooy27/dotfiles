@@ -62,6 +62,7 @@ for_window [class="^.*"] border pixel 0
 gaps inner 5
 gaps outer 5
 # smart_gaps on
+
 # class                 border  backgr. text    indicator child_border
 client.focused          #7aa2f7 #7aa2f7 #1a1b26 #2e9ef4   #285577
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
@@ -265,7 +266,7 @@ bar {
         padding 0 10px
 
         status_command ~/.config/i3/bumblebee-status/bumblebee-status \
-        -m network memory battery date time pomodoro \
+        -m pomodoro network spacer memory spacer date spacer time spacer battery \
         -p time.format="%H:%M CW %V" date.format="%a, %b %d %Y" \
         -t solarized-powerline
 
