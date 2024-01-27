@@ -56,8 +56,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-for_window [class="^.*"] border pixel 0
+for_window [all] title_window_icon padding 5px
 
+for_window [class="^.*"] border pixel 0
 gaps inner 5
 gaps outer 5
 # smart_gaps on
