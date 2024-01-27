@@ -261,6 +261,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         position top
+        padding 0 10px
 
         status_command ~/.config/i3/bumblebee-status/bumblebee-status \
         -m network memory battery date time pomodoro \
