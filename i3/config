@@ -264,28 +264,3 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        position top
-        padding 0 10px
-
-        status_command ~/.config/i3/bumblebee-status/bumblebee-status \
-        -m pomodoro network spacer memory spacer date spacer time spacer battery \
-        -p time.format="%H:%M CW %V" date.format="%a, %b %d %Y" \
-        -t iceberg-contrast
-
-        i3bar_command i3bar --transparency
-
-        colors {
-                background #00000000
-                statusline #ffffff
-                separator #900000
-
-                focused_workspace  #7aa2f7 #7aa2f7 #ffffff
-                active_workspace   #333333 #5f676a #ffffff
-                inactive_workspace #333333 #222222 #888888
-                urgent_workspace   #2f343a #900000 #ffffff
-                binding_mode       #2f343a #900000 #ffffff
-            }
-        font pango:CaskaydiaCove Nerd Font Mono 10
-
-}
