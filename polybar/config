@@ -104,8 +104,8 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = #7aa2f7
-label-focused-foreground = #000000
+label-focused-background = #000000
+label-focused-foreground = #ffffff
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -136,8 +136,8 @@ label = CPU-%percentage:2%%
 
 [module/memory]
 format-used = <label> <bar-used>
-; format-background = #bb9af7
-; format-foreground = #000000
+format-background = #000000
+format-foreground = #ffffff
 format-used-padding = 2
 type = internal/memory
 interval = 2
@@ -150,15 +150,15 @@ interface = wlp2s0
 interval = 3.0
 
 format-connected = <label-connected>
-; format-connected-background = #7aa2f7
-; label-connected-foreground = #000000
+format-connected-background = #000000
+label-connected-foreground = #ffffff
 format-connected-padding = 2
-label-connected = %essid% sg:%signal%%
+label-connected = %essid% sgl:%signal%%
 
 format-disconnected = <label-disconnected>
 label-disconnected = %ifname% disconnected
 format-disconnected-padding = 2
-format-disconnected-background = #e0af68
+format-disconnected-foreground = #ffffff
 label-disconnected-foreground = ${colors.foreground-alt}
 
 
@@ -194,17 +194,19 @@ adapter = AC
 full-at = 98
 
 format-charging = <label-charging>
-format-charging-background = #9ece6a
-label-charging-foreground = #000000
-label-charging-padding = 1
-label-charging = CHR %percentage%%
+format-charging-background = #000000
+format-charging-foreground = #ffffff
+label-charging-padding = 2
+label-charging = CHR %percentage_raw%%
 
-label-discharging = BAT %percentage%%
+label-discharging = BAT %percentage_raw%%
 format-discharging =  <label-discharging>
-format-discharging-background = #f7768e
-label-discharging-foreground = #000000
-label-discharging-padding = 1
+format-discharging-foreground = #000000
+format-discharging-background = #ffffff
+label-discharging-padding = 2
 
+label-low = LOW %percentage_raw%%
+format-low =  <label-low>
 format-full-underline = ${self.format-charging-underline}
 
 
