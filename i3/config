@@ -46,7 +46,7 @@ exec --no-startup-id picom -CGb
 exec --no-startup-id nitrogen --restore
 
 #autostart redshift
-exec --no-startup-id redshift -O 3700
+# exec --no-startup-id redshift -O 3700
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -97,6 +97,12 @@ bindsym $mod+Shift+c exec google-chrome
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# start redshift
+bindsym $mod+Shift+m exec redshift -O 3000
+bindsym Shift+Ctrl+m exec redshift -x
+
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 # start obsidian 
 bindsym $mod+Shift+o exec obsidian
 
