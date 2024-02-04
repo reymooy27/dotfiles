@@ -35,7 +35,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # exec --no-startup-id nm-applet
 
 # autostart terminal and browser
-exec --no-startup-id "i3-msg 'workspace 1; exec alacritty; workspace 2; exec google-chrome'"
+exec --no-startup-id "i3-msg 'workspace 1; exec alacritty -e tmux; workspace 2; exec google-chrome'"
 
 #use polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -58,15 +58,15 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-for_window [all] title_window_icon padding 5px
+# for_window [all] title_window_icon padding 5px
 
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1px
 gaps inner 5
 gaps outer 5
 # smart_gaps on
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #00000000 #000000 #ffffff #2e9ef4   #285577
+client.focused          #00000000 #414868 #ffffff #2e9ef4   #7dcfff
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #00000000 #00000080 #ffffff #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -80,7 +80,7 @@ assign [class="obsidian"] 3
 assign [class="^nautilus$"] 4
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec alacritty -e tmux
 
 # start settings
 bindsym $mod+Shift+s exec gnome-control-center 
