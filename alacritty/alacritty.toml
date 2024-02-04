@@ -46,8 +46,8 @@ index = 17
 color = '#db4b4b'
 
 [window]
-opacity = 0.8
+opacity = 0.9
 blur = true
 dynamic_padding = true
-padding.x = 10
-padding.y = 10
+padding.x = 3
+padding.y = 3
