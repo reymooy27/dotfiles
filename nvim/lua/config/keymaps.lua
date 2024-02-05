@@ -13,6 +13,8 @@ keymap.set("n", "ew", ":w<CR>", opts)
 
 --undo
 keymap.set("n", "<C-z>", "u")
+--redo
+keymap.set("n", "U", "<C-r>")
 
 --new line
 keymap.set("n", "<Enter>", "o")
