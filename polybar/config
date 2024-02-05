@@ -15,7 +15,12 @@
 ;
 ;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
 ;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝ ;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗ ;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║ ;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ ; ;
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
 ;   To learn more about how to configure Polybar
 ;   go to https://github.com/polybar/polybar
 ;
@@ -51,14 +56,17 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
+line-size = 3
 line-color = #f00
 
-border-size = 4border-color = #00000000
+border-size = 4
+border-color = #00000000
 
 padding-left = 0
+pading-right = 0
 
-; 
-; 
+; module-margin-left = 0
+; module-margin-right = 3
 
 ; font-0 = CaskaydiaCove Nerd Font Mono:pixelsize=9;3
 font-0 = JetBrainsMono Nerd Font:style=Bold:pixelsize=11;3
@@ -69,7 +77,7 @@ modules-center = round-left date round-right
 modules-right = round-left memory round-right empty-space round-left wlan round-right empty-space round-left battery round-right
 
 ; tray-position = right
-; 
+; tray-padding = 2
 ;tray-background = #0063ff
 ;wm-restack = bspwm
 
@@ -89,17 +97,13 @@ cursor-scroll = ns-resize
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
-
-
-; Only show workspaces on the same output as the bar
-;pin-workspaces = trueline-size = 3
-pading-right = 0
-module-margin-left = 0
-module-margin-right = 3
-tray-padding = 2
 index-sort = true
 wrapping-scroll = false
 
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+
+label-mode-padding = 0
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
@@ -107,10 +111,11 @@ label-mode-background = ${colors.primary}
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-foreground = ${colors.primary}
-
+label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
+label-unfocused-padding = 1
 label-unfocused-background = ${colors.background-alt}
 label-unfocused-foreground = ${colors.foreground}
 
@@ -123,16 +128,12 @@ label-visible-padding = ${self.label-focused-padding}
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
 label-urgent-background = ${colors.alert}
-
+label-urgent-padding = 2
 
 ; Separator in between workspaces
 ; label-separator = |
 [module/empty-space]
 type = custom/text
-label-mode-padding = 0
-label-focused-padding = 1
-label-unfocused-padding = 1
-label-urgent-padding = 2
 content = "  "
 
 [module/round-right]
@@ -147,17 +148,17 @@ content-foreground = ${colors.background-alt}
 
 [module/cpu]
 type = internal/cpu
+interval = 2
 label = CPU-%percentage:2%%
 
 [module/memory]
 format-used = <label> <bar-used>
 format-foreground = ${colors.yellow}
 format-background = ${colors.background-alt}
-type = internal/memory
-label = RAM: %gb_used%/%gb_total%
-interval = 2
 format-used-padding = 2
+type = internal/memory
 interval = 2
+label = RAM: %gb_used%/%gb_total%
 format-padding = 2
 
 [module/wlan]
@@ -168,14 +169,14 @@ interval = 3.0
 format-connected = <label-connected>
 format-connected-background = ${colors.background-alt}
 label-connected-foreground = ${colors.green}
+format-connected-padding = 2
 label-connected = %essid% sgl:%signal%%
 
 format-disconnected = <label-disconnected>
 label-disconnected = %ifname% disconnected
 label-disconnected-background = ${colors.background-alt}
 label-disconnected-foreground = ${colors.red}
-; format-connected-padding = 2
-format-disconnected-padding = 2
+; format-disconnected-padding = 2
 
 
 [module/eth]
@@ -198,6 +199,7 @@ format-disconnected =
 type = internal/date
 interval = 5
 
+date = " %d/%m/%Y"
 format-background = ${colors.background-alt}
 format-foreground = ${colors.primary}
 
@@ -208,24 +210,25 @@ label = %date% %time%
 type = internal/battery
 battery = BAT0
 adapter = AC
-date = " %d/%m/%Y"
 full-at = 98
 
 format-charging = <label-charging>
 format-charging-background = ${colors.background-alt}
 format-charging-foreground = ${colors.green}
+label-charging-padding = 2
 label-charging = CHR %percentage_raw%%
 
 label-discharging = BAT %percentage_raw%%
 format-discharging =  <label-discharging>
 format-discharging-background = ${colors.background-alt}
 format-discharging-foreground = ${colors.foreground}
-label-charging-padding = 2
 label-discharging-padding = 2
 
 label-low = LOW %percentage_raw%%
 format-low =  <label-low>
 format-full-underline = ${self.format-charging-underline}
+format-full-background = ${colors.background-alt}
+format-full-foreground = #ffffff
 
 
 [module/powermenu]
@@ -258,16 +261,15 @@ menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
 [settings]
-
+screenchange-reload = true
 ;compositing-background = xor
 ;compositing-background = screen
 ;compositing-foreground = source
 ;compositing-border = over
-;pseudo-transparency = falsescreenchange-reload = true
+;pseudo-transparency = false
 
 [global/wm]
-
-
-; vim:ft=dosini
 margin-top = 0
 margin-bottom = 0
+
+; vim:ft=dosini
