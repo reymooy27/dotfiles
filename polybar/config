@@ -72,7 +72,7 @@ pading-right = 0
 font-0 = JetBrainsMono Nerd Font:style=Bold:pixelsize=11;3
 font-1 = JetBrainsMono Nerd Font:size=14;4
 
-modules-left = i3 round-right
+modules-left = i3 round-right empty-space round-left eth round-right
 modules-center = round-left date round-right
 modules-right = round-left memory round-right empty-space round-left wlan round-right empty-space round-left battery round-right
 
@@ -181,19 +181,17 @@ label-disconnected-foreground = ${colors.red}
 
 [module/eth]
 type = internal/network
-interface = enp0s31f6
+interface = enp1s0
 interval = 3.0
 
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
+format-connected-foreground = ${colors.green}
+format-connected-background = ${colors.background-alt}
+label-connected = LAN:: %local_ip%
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected = <label-disconnected>
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.red}
+label-disconnected-background = ${colors.background-alt}
 
 [module/date]
 type = internal/date
