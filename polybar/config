@@ -69,12 +69,12 @@ pading-right = 0
 ; module-margin-right = 3
 
 ; font-0 = CaskaydiaCove Nerd Font Mono:pixelsize=9;3
-font-0 = JetBrainsMono Nerd Font:style=Bold:pixelsize=11;3
+font-0 = JetBrainsMono Nerd Font:pixelsize=11;3
 font-1 = JetBrainsMono Nerd Font:size=14;4
 
 modules-left = i3 round-right empty-space round-left eth round-right
 modules-center = round-left date round-right
-modules-right = round-left memory round-right empty-space round-left wlan round-right empty-space round-left battery round-right
+modules-right = round-left pulseaudio backlight memory wlan battery round-right
 
 ; tray-position = right
 ; tray-padding = 2
@@ -151,15 +151,29 @@ type = internal/cpu
 interval = 2
 label = CPU-%percentage:2%%
 
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+format = <label>
+use-actual-brightness = true
+poll-interval = 0
+enable-scroll = true
+scroll-interval = 10
+label = %percentage%%
+label-background = ${colors.background-alt}
+label-foreground = ${colors.primary}
+ramp-background = ${colors.background-alt}
+
 [module/memory]
 format-used = <label> <bar-used>
-format-foreground = ${colors.yellow}
+format-foreground = ${colors.primary}
 format-background = ${colors.background-alt}
-format-used-padding = 2
+format-used-padding = 1
 type = internal/memory
 interval = 2
-label = RAM: %gb_used%/%gb_total%
-format-padding = 2
+format-prefix = " "
+label = %percentage_used%%
+format-padding = 1
 
 [module/wlan]
 type = internal/network
@@ -168,28 +182,39 @@ interval = 3.0
 
 format-connected = <label-connected>
 format-connected-background = ${colors.background-alt}
-label-connected-foreground = ${colors.green}
-format-connected-padding = 2
-label-connected = %essid% sgl:%signal%%
+label-connected-foreground = ${colors.primary}
+format-connected-padding = 1
+label-connected = %essid% %signal%%
 
 format-disconnected = <label-disconnected>
-label-disconnected = %ifname% disconnected
+label-disconnected = %ifname% dc
 label-disconnected-background = ${colors.background-alt}
 label-disconnected-foreground = ${colors.red}
 ; format-disconnected-padding = 2
-
+;
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <label-volume>
+label-volume = %percentage%%
+label-volume-foreground = ${colors.primary}
+label-volume-background = ${colors.background-alt}
+label-volume-padding = 1
+use-ui-max = true
+interval = 5
+reverse-scroll = false
 
 [module/eth]
 type = internal/network
 interface = enp1s0
 interval = 3.0
 
-format-connected-foreground = ${colors.green}
+
+format-connected-foreground = ${colors.primary}
 format-connected-background = ${colors.background-alt}
-label-connected = LAN:: %local_ip%
+label-connected = %local_ip% up::%upspeed% down::%downspeed%
 
 format-disconnected = <label-disconnected>
-label-disconnected = %ifname% disconnected
+label-disconnected =  dc
 label-disconnected-foreground = ${colors.red}
 label-disconnected-background = ${colors.background-alt}
 
@@ -212,15 +237,15 @@ full-at = 98
 
 format-charging = <label-charging>
 format-charging-background = ${colors.background-alt}
-format-charging-foreground = ${colors.green}
-label-charging-padding = 2
-label-charging = CHR %percentage_raw%%
+format-charging-foreground = ${colors.primary}
+label-charging-padding = 1
+label-charging ="% percentage_raw%%
 
-label-discharging = BAT %percentage_raw%%
+label-discharging = "% %percentage_raw%%
 format-discharging =  <label-discharging>
 format-discharging-background = ${colors.background-alt}
 format-discharging-foreground = ${colors.foreground}
-label-discharging-padding = 2
+label-discharging-padding = 1
 
 label-low = LOW %percentage_raw%%
 format-low =  <label-low>
