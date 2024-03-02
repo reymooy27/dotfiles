@@ -36,7 +36,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # autostart terminal and browser
 # exec --no-startup-id "i3-msg 'workspace 1; exec alacritty -e tmux; workspace 2; exec google-chrome'"
-exec --no-startup-id exec alacritty -e tmux
+# exec --no-startup-id exec alacritty -e tmux
+exec --no-startup-id exec alacritty
 exec --no-startup-id exec google-chrome
 
 #use polybar
@@ -62,9 +63,9 @@ floating_modifier $mod
 
 # for_window [all] title_window_icon padding 5px
 
-for_window [class="^.*"] border pixel 1px
+for_window [class="^.*"] border pixel 2px
 gaps inner 5
-gaps outer 5
+gaps outer 0
 # smart_gaps on
 
 # class                 border  backgr. text    indicator child_border
@@ -82,7 +83,7 @@ assign [class="obsidian"] 3
 assign [class="Org.gnome.Nautilus"] 4
 
 # start a terminal
-bindsym $mod+Return exec alacritty -e tmux
+bindsym $mod+Return exec alacritty
 
 # start settings
 bindsym $mod+Shift+s exec gnome-control-center 
@@ -110,6 +111,13 @@ bindsym Ctrl+Shift+Up exec --no-startup-id brightnessctl set +5%
 bindsym Ctrl+Shift+Down exec --no-startup-id brightnessctl set 5%-
 # start obsidian 
 bindsym $mod+Shift+o exec obsidian
+
+# dual monitor
+bindsym $mod+Shift+u exec xrandr --output HDMI-1 --mode 1920x1080 --primary --output eDP-1 --left-of HDMI-1
+bindsym Ctrl+Shift+u exec xrandr --output HDMI-1 --off --output eDP-1 --primary --auto 
+
+workspace_auto_back_and_forth yes
+
 
 # turn off laptop keyboard & touchpad
 bindsym $mod+Shift+t exec xinput list-props "$(xinput list --id-only 'ELAN1200:00 04F3:3045 Touchpad')" | grep "^\sDevice Enabled.*1$" && xinput disable "$(xinput list --id-only 'ELAN1200:00 04F3:3045 Touchpad')" || xinput enable "$(xinput list --id-only 'ELAN1200:00 04F3:3045 Touchpad')"
