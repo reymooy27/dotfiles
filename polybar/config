@@ -183,8 +183,8 @@ interval = 3.0
 format-connected = <label-connected>
 format-connected-background = ${colors.background-alt}
 label-connected-foreground = ${colors.primary}
-format-connected-padding = 1
-label-connected = %essid% %signal%%
+format-connected-padding = 0
+label-connected = %essid% %signal%%
 
 format-disconnected = <label-disconnected>
 label-disconnected = %ifname% dc
@@ -239,9 +239,9 @@ format-charging = <label-charging>
 format-charging-background = ${colors.background-alt}
 format-charging-foreground = ${colors.primary}
 label-charging-padding = 1
-label-charging ="% percentage_raw%%
+label-charging =" percentage_raw%%
 
-label-discharging = "% %percentage_raw%%
+label-discharging = " %percentage_raw%%
 format-discharging =  <label-discharging>
 format-discharging-background = ${colors.background-alt}
 format-discharging-foreground = ${colors.foreground}
