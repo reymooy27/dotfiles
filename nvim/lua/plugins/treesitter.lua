@@ -1,8 +1,8 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
-  opts = {
-    autotag = {
-      enabled = true,
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+        autotag = {
+            enabled = true,
+        },
     },
-  },
 }

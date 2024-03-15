@@ -17,7 +17,7 @@ keymap.set("n", "<C-z>", "u")
 keymap.set("n", "U", "<C-r>")
 
 --new line
-keymap.set("n", "<Enter>", "o")
+-- keymap.set("n", "<Enter>", "o")
 
 --out of insert mode
 keymap.set("i", "jk", "<Esc>")
