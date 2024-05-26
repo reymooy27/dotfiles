@@ -1,7 +1,8 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 11px;
+  font-weight: 600;
 }
 
 window#waybar {
@@ -112,12 +113,9 @@ button:hover {
 }
 
 #clock {
-  background-color: #64727d;
 }
 
 #battery {
-  background-color: #ffffff;
-  color: #000000;
 }
 
 #battery.charging,
@@ -172,29 +170,8 @@ label:focus {
   color: #000000;
 }
 
-#memory {
-  background-color: #9b59b6;
-}
-
-#disk {
-  background-color: #964b00;
-}
-
-#backlight {
-  background-color: #90b1b1;
-}
-
-#network {
-  background-color: #2980b9;
-}
-
 #network.disconnected {
   background-color: #f53c3c;
-}
-
-#pulseaudio {
-  background-color: #f1c40f;
-  color: #000000;
 }
 
 #pulseaudio.muted {
@@ -234,7 +211,7 @@ label:focus {
 }
 
 #tray {
-  background-color: #2980b9;
+  /*background-color: #2980b9;*/
 }
 
 #tray > .passive {

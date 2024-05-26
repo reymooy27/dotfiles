@@ -6,19 +6,15 @@
   // "width": 1280, // Waybar width
   "spacing": 4, // Gaps between modules (4px)
   // Choose the order of the modules
-  "modules-left": ["sway/mode", "sway/scratchpad", "custom/media"],
-  "modules-center": ["sway/window"],
+  // "modules-left": ["sway/mode", "sway/scratchpad", "custom/media"],
+  "modules-center": ["clock"],
   "modules-right": [
-    "idle_inhibitor",
     "network",
-    "power-profiles-daemon",
     "memory",
     "backlight",
-    "keyboard-state",
-    "sway/language",
+    "pulseaudio",
     "battery",
     "battery#bat2",
-    "clock",
     "tray",
   ],
   // Modules configuration
@@ -159,11 +155,11 @@
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{volume}% {icon} {format_source}",
+    "format": "{volume}% {icon}",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
+    // "format-source": "{volume}% ",
     "format-source-muted": "",
     "format-icons": {
       "headphone": "",
