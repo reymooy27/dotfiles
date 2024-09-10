@@ -18,3 +18,8 @@ Dependencies
 - alacritty (terminal)
 - google-chrome
 - obsidian (optional)
+
+# Arch
+- app launcher : wofi
+- app bar : waybar
+

@@ -6,7 +6,9 @@
   // "width": 1280, // Waybar width
   "spacing": 4, // Gaps between modules (4px)
   // Choose the order of the modules
-  // "modules-left": ["sway/mode", "sway/scratchpad", "custom/media"],
+  "modules-left": [
+    "hyprland/workspaces",
+  ],
   "modules-center": [
     "clock"
   ],
@@ -57,6 +59,12 @@
     ],
     "tooltip": true,
     "tooltip-format": "{app}: {title}",
+  },
+  "hyprland/workspaces": {
+    "icon-size": 32,
+    "spacing": 16,
+    // "on-scroll-up": "hyprctl dispatch workspace r+1",
+    // "on-scroll-down": "hyprctl dispatch workspace r-1"
   },
   "mpd": {
     "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -183,7 +191,7 @@
     "format": "{volume}% {icon}",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
+    "format-muted": "muted",
     // "format-source": "{volume}% ",
     "format-source-muted": "",
     "format-icons": {
