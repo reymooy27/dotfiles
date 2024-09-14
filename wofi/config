@@ -1,2 +1,7 @@
-width=30%
+mode=drun,run
+width=35%
 height=30%
+insensitive=true
+allow_images=true
+term=kitty
+lines=6
