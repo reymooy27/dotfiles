@@ -105,3 +105,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 alias v='nvim'
+
+
+# run fastfetch on startup
+fastfetch
