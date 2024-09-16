@@ -1,14 +1,17 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
   font-family: JetBrainsMono Nerd Font;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
 }
 
 window#waybar {
-  background-color: #333c43;
+  /*background-color: #333c43;*/
+  background-color: transparent;
+  color: #a7c080;
   transition-property: background-color;
   transition-duration: 0.5s;
+  margin-top: 10px;
 }
 
 /*window#waybar.hidden {*/
@@ -52,10 +55,10 @@ button:hover {
 /*  background-color: #a37800;*/
 /*}*/
 
+
 #workspaces button {
   padding: 0 5px;
-  background-color: transparent;
-  color: #ffffff;
+  color: #a7c080;
 }
 
 #workspaces button:hover {
@@ -63,7 +66,10 @@ button:hover {
 }
 
 #workspaces button.active {
-  border-bottom: 3px solid #a7c080;
+  background-color: #333c43;
+  border: 1px solid #a7c080;
+  border-radius: 900px;
+  color: #a7c080;
 }
 
 #workspaces button.focused {
@@ -97,8 +103,8 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-  padding: 0 10px;
-  color: #ffffff;
+  padding: 0 8px;
+  color: #a7c080;
 }
 
 #window,
@@ -111,32 +117,52 @@ button:hover {
   margin-left: 0;
 }
 
+.modules-left {
+  margin-left: 5px;
+  border-radius: 40px;
+}
+
+.modules-center {
+  border-radius: 40px;
+  border: 1px solid #a7c080;
+}
+
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right>widget:last-child>#workspaces {
   margin-right: 0;
 }
 
-#clock {}
+.modules-right {
+  margin-right: 5px;
+  border: 1px solid #a7c080;
+
+  background-color: #333c43;
+  border-radius: 40px;
+}
+
+#clock {
+  background-color: #333c43;
+  border-radius: 40px;
+  padding: 0 10px;
+}
 
 #battery {}
 
 #battery.charging,
 #battery.plugged {
   color: #ffffff;
-  background-color: #26a65b;
 }
 
 @keyframes blink {
   to {
-    background-color: #ffffff;
-    color: #000000;
+    color: #f53c3c;
+    color: #ffffff;
   }
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-  background-color: #f53c3c;
-  color: #ffffff;
+  color: #f53c3c;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: steps(12);
