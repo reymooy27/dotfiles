@@ -1,0 +1,218 @@
+{
+  "editor.fontFamily": "JetBrainsMono NFM",
+  "vim.leader": "<space>",
+  "vim.hlsearch": true,
+  "vim.sneak": true,
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.showMarksInGutter": true,
+  "vim.searchMatchColor": "orange",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.lineNumbers": "relative",
+  // "vim.useCtrlKeys": false,
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-u>": true,
+    "<C-s>": false,
+    "<C-z>": true,
+  },
+  "vim.normalModeKeyBindings": [],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<C-/>",
+      ],
+      "commands": [
+        "workbench.action.terminal.toggleTerminal"
+      ]
+    },
+    // {
+    //   "before": [
+    //     "<leader>",
+    //     "g",
+    //     "p",
+    //     "l"
+    //   ],
+    //   "commands": [
+    //     "git.pull"
+    //   ]
+    // },
+    // {
+    //   "before": [
+    //     "<leader>",
+    //     "g",
+    //     "c"
+    //   ],
+    //   "commands": [
+    //     "git.checkout"
+    //   ]
+    // },
+    // {
+    //   "before": [
+    //     "<leader>",
+    //     "g",
+    //     "c",
+    //     "o"
+    //   ],
+    //   "commands": [
+    //     "git.commit"
+    //   ]
+    // },
+    // {
+    //   "before": [
+    //     "<leader>",
+    //     "g"
+    //   ],
+    //   "commands": [
+    //     "workbench.scm.focus"
+    //   ]
+    // },
+    {
+      "before": [
+        "<leader>",
+        "t"
+      ],
+      "commands": [
+        "editor.emmet.action.matchTag"
+      ]
+    },
+    // {
+    //   "before": [
+    //     "<leader>",
+    //     "d"
+    //   ],
+    //   "commands": [
+    //     "workbench.action.closeActiveEditor"
+    //   ]
+    // },
+    // {
+    //   "before": [
+    //     "<leader>",
+    //     "<leader>"
+    //   ],
+    //   "commands": [
+    //     "workbench.action.quickOpen",
+    //   ],
+    // },
+    {
+      "before": [
+        "<S-u>"
+      ],
+      "after": [
+        "<C-r>",
+      ],
+    },
+    {
+      "before": [
+        "<leader>",
+        "f"
+      ],
+      "commands": [
+        "revealInExplorer",
+      ],
+    },
+    {
+      "before": [
+        "<leader>",
+        "p"
+      ],
+      "commands": [
+        "workbench.action.showCommands"
+      ],
+    },
+    {
+      "before": [
+        "<leader>",
+        "e"
+      ],
+      "commands": [
+        "workbench.action.toggleSidebarVisibility"
+      ],
+    },
+    {
+      "before": [
+        "w",
+        "e"
+      ],
+      "commands": [
+        "workbench.action.files.save"
+      ]
+    },
+    {
+      "before": [
+        "e",
+        "w"
+      ],
+      "commands": [
+        "workbench.action.files.save"
+      ]
+    },
+    {
+      "before": [
+        "<S-l>",
+      ],
+      "commands": [
+        "workbench.action.nextEditor"
+      ]
+    },
+    {
+      "before": [
+        "<S-h>",
+      ],
+      "commands": [
+        "workbench.action.previousEditor"
+      ]
+    },
+    {
+      "before": [
+        "<C-a>",
+      ],
+      "commands": [
+        "editor.action.selectAll"
+      ]
+    },
+  ],
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "k",
+        "j"
+      ],
+      "after": [
+        "<esc>"
+      ]
+    },
+    {
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<esc>"
+      ]
+    },
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "i",
+        "i"
+      ],
+      "after": [
+        "<esc>"
+      ]
+    },
+  ],
+  "explorer.confirmDelete": false,
+  "workbench.colorTheme": "Everforest Dark",
+  "editor.fontLigatures": true,
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "git.autofetch": true,
+  "prisma.showPrismaDataPlatformNotification": false,
+  "git.confirmSync": false,
+  "editor.fontSize": 15,
+  "editor.linkedEditing": true,
+}
