@@ -1,117 +1,57 @@
 {
-  "editor.fontFamily": "JetBrainsMono NFM",
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
   "vim.leader": "<space>",
   "vim.hlsearch": true,
   "vim.sneak": true,
+  "vim.sneakUseIgnorecaseAndSmartcase": true,
+  // "vim.scroll": 20,
+  "vim.changeWordIncludesWhitespace": true,
   "vim.easymotion": true,
   "vim.incsearch": true,
+  "vim.foldfix": true,
   "vim.useSystemClipboard": true,
   "vim.showMarksInGutter": true,
-  "vim.searchMatchColor": "orange",
+  "vim.searchMatchColor": "white",
+  "vim.highlightedyank.color": "rgba(250, 225, 225, 0.5)",
+  "vim.sneakReplacesF": true,
+  "vim.startofline": true,
+  "vim.surround": true,
+  "vim.matchpairs": "(:),{:},[:]",
   "editor.formatOnSave": true,
   "editor.tabSize": 2,
+  "editor.wordWrapColumn": 80,
+  "editor.hover.above": false,
+  "editor.hover.sticky": true,
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports.ts": "always",
+    "source.fixAll.ts": "always",
+    "source.sortImports": "always"
+  },
   "editor.lineNumbers": "relative",
-  // "vim.useCtrlKeys": false,
   "vim.handleKeys": {
     "<C-d>": true,
     "<C-u>": true,
     "<C-s>": false,
-    "<C-z>": true,
+    "<C-z>": false
   },
   "vim.normalModeKeyBindings": [],
   "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        "<C-/>",
-      ],
-      "commands": [
-        "workbench.action.terminal.toggleTerminal"
-      ]
-    },
     // {
-    //   "before": [
-    //     "<leader>",
-    //     "g",
-    //     "p",
-    //     "l"
-    //   ],
-    //   "commands": [
-    //     "git.pull"
-    //   ]
-    // },
-    // {
-    //   "before": [
-    //     "<leader>",
-    //     "g",
-    //     "c"
-    //   ],
-    //   "commands": [
-    //     "git.checkout"
-    //   ]
-    // },
-    // {
-    //   "before": [
-    //     "<leader>",
-    //     "g",
-    //     "c",
-    //     "o"
-    //   ],
-    //   "commands": [
-    //     "git.commit"
-    //   ]
-    // },
-    // {
-    //   "before": [
-    //     "<leader>",
-    //     "g"
-    //   ],
-    //   "commands": [
-    //     "workbench.scm.focus"
-    //   ]
-    // },
-    {
-      "before": [
-        "<leader>",
-        "t"
-      ],
-      "commands": [
-        "editor.emmet.action.matchTag"
-      ]
-    },
-    // {
-    //   "before": [
-    //     "<leader>",
-    //     "d"
-    //   ],
-    //   "commands": [
-    //     "workbench.action.closeActiveEditor"
-    //   ]
-    // },
-    // {
-    //   "before": [
-    //     "<leader>",
-    //     "<leader>"
-    //   ],
-    //   "commands": [
-    //     "workbench.action.quickOpen",
-    //   ],
+    //     "before": [
+    //         "<leader>",
+    //         "t"
+    //     ],
+    //     "commands": [
+    //         "editor.emmet.action.matchTag"
+    //     ]
     // },
     {
       "before": [
         "<S-u>"
       ],
       "after": [
-        "<C-r>",
-      ],
-    },
-    {
-      "before": [
-        "<leader>",
-        "f"
-      ],
-      "commands": [
-        "revealInExplorer",
-      ],
+        "<C-r>"
+      ]
     },
     {
       "before": [
@@ -120,16 +60,7 @@
       ],
       "commands": [
         "workbench.action.showCommands"
-      ],
-    },
-    {
-      "before": [
-        "<leader>",
-        "e"
-      ],
-      "commands": [
-        "workbench.action.toggleSidebarVisibility"
-      ],
+      ]
     },
     {
       "before": [
@@ -151,28 +82,35 @@
     },
     {
       "before": [
-        "<S-l>",
+        "<C-a>"
       ],
-      "commands": [
-        "workbench.action.nextEditor"
+      "after": [
+        "G",
+        "V",
+        "g",
+        "g"
       ]
     },
     {
       "before": [
-        "<S-h>",
+        "]",
+        "e"
       ],
       "commands": [
-        "workbench.action.previousEditor"
-      ]
+        "editor.action.marker.nextInFiles"
+      ],
+      "silent": true
     },
     {
       "before": [
-        "<C-a>",
+        "[",
+        "e"
       ],
       "commands": [
-        "editor.action.selectAll"
-      ]
-    },
+        "editor.action.marker.prevInFiles"
+      ],
+      "silent": true
+    }
   ],
   "vim.insertModeKeyBindingsNonRecursive": [
     {
@@ -192,7 +130,7 @@
       "after": [
         "<esc>"
       ]
-    },
+    }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
@@ -203,16 +141,74 @@
       "after": [
         "<esc>"
       ]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [
+        ">"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
+    },
+    {
+      "before": [
+        "<"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ]
     },
   ],
   "explorer.confirmDelete": false,
-  "workbench.colorTheme": "Everforest Dark",
+  "window.confirmBeforeClose": "never",
   "editor.fontLigatures": true,
   "editor.minimap.enabled": false,
   "breadcrumbs.enabled": false,
   "git.autofetch": true,
   "prisma.showPrismaDataPlatformNotification": false,
   "git.confirmSync": false,
-  "editor.fontSize": 15,
   "editor.linkedEditing": true,
+  "editor.fontSize": 14,
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "accessibility.signals.terminalBell": {
+    "sound": "off"
+  },
+  "accessibilityjsignals.terminalCommandFailed": {
+    "announcement": "off",
+    "sound": "off"
+  },
+  "vim.commandLineModeKeyBindingsNonRecursive": [],
+  "terminal.explorerKind": "external",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "workbench.activityBar.location": "hidden",
+  "workbench.editor.showTabs": "multiple",
+  "window.density.editorTabHeight": "compact",
+  "window.menuBarVisibility": "hidden",
+  "window.commandCenter": false,
+  "workbench.startupEditor": "none",
+  "workbench.tips.enabled": false,
+  "explorer.compactFolders": false,
+  "explorer.confirmDragAndDrop": false,
+  "editor.codeLens": false,
+  "editor.lightbulb.enabled": "off",
+  // "editor.hover.enabled": false,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "editor.guides.indentation": false,
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.overviewRulerBorder": false,
+  "workbench.activityBar.orientation": "vertical",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.sideBar.location": "right",
+  // "workbench.statusBar.visible": false,
+  "window.title": "Nothing",
+  "extensions.autoUpdate": true,
+  "vim.wrapscan": true,
+  "extensions.ignoreRecommendations": true,
+  "workbench.remoteIndicator.showExtensionRecommendations": false
 }
