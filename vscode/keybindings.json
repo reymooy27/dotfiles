@@ -2,23 +2,24 @@
 [
   {
     "key": "ctrl+j",
-    "command": "workbench.action.navigateDown",
+    "command": "workbench.action.navigateDown"
   },
   {
     "key": "ctrl+k",
     "command": "workbench.action.navigateUp",
+    "when": "terminalFocus"
   },
   {
     "key": "ctrl+h",
-    "command": "workbench.action.navigateLeft",
+    "command": "workbench.action.navigateLeft"
   },
   {
     "key": "ctrl+l",
-    "command": "workbench.action.navigateRight",
+    "command": "workbench.action.navigateRight"
   },
   {
     "key": "ctrl+/",
-    "command": "workbench.action.terminal.toggleTerminal",
+    "command": "workbench.action.terminal.toggleTerminal"
     // "when": "terminalFocus"
   },
   // {
@@ -54,6 +55,11 @@
   {
     "key": "space e",
     "command": "workbench.action.toggleSidebarVisibility",
+    "when": "vim.active && vim.mode != 'Insert'&& (editorTextFocus || !inputFocus) || (view.workbench.scm.visible == true)"
+  },
+  {
+    "key": "space t",
+    "command": "editor.emmet.action.matchTag",
     "when": "vim.active && vim.mode != 'Insert'&& (editorTextFocus || !inputFocus)"
   },
   {
@@ -80,6 +86,19 @@
     "key": "shift+k",
     "command": "editor.action.showHover",
     "when": "vim.mode == 'Normal' && editorTextFocus"
+    // "args": {
+    //   "focus": "autoFocusImmediately",
+    // }
+  },
+  {
+    "key": "shift+l",
+    "command": "workbench.action.nextEditor",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
+  {
+    "key": "shift+h",
+    "command": "workbench.action.previousEditor",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
   },
   {
     "key": "space c a",
@@ -102,13 +121,18 @@
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
-    "key": "space /",
-    "command": "workbench.action.findInFiles",
+    "key": "space g g",
+    "command": "workbench.view.scm",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
-    "key": "space g g",
-    "command": "workbench.view.scm",
+    "key": "space g b",
+    "command": "git.checkout",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space g r",
+    "command": "git.revertSelectedRanges",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
@@ -169,4 +193,143 @@
       ]
     }
   },
+  {
+    "key": "ctrl+1",
+    "command": "workbench.action.terminal.focusAtIndex1",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+2",
+    "command": "workbench.action.terminal.focusAtIndex2",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+3",
+    "command": "workbench.action.terminal.focusAtIndex3",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+4",
+    "command": "workbench.action.terminal.focusAtIndex4",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+5",
+    "command": "workbench.action.terminal.focusAtIndex5",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+6",
+    "command": "workbench.action.terminal.focusAtIndex6",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+7",
+    "command": "workbench.action.terminal.focusAtIndex7",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+8",
+    "command": "workbench.action.terminal.focusAtIndex8",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+9",
+    "command": "workbench.action.terminal.focusAtIndex9",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+0",
+    "command": "workbench.action.terminal.focusAtIndex0",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+t",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus"
+  },
+  // add commanfto delete terminal
+  {
+    "key": "ctrl+shift+d",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+e",
+    "command": "workbench.action.terminal.split",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "workbench.action.terminal.splitInActiveWorkspace",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+u",
+    "command": "workbench.action.terminal.toggleFindWidget",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "workbench.action.terminal.toggleFindRegex",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "workbench.action.terminal.toggleFindCaseSensitive",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+space",
+    "command": "workbench.action.terminal.toggleFindWholeWord",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+backspace",
+    "command": "workbench.action.terminal.clear",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+enter",
+    "command": "workbench.action.terminal.runSelectedText",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "workbench.action.terminal.scrollUp",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "workbench.action.terminal.scrollDown",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.terminal.scrollLeft",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.terminal.scrollRight",
+    "when": "terminalFocus"
+  },
+  // i want to make keybinding to navigate inside the git tab in vscode or tab like using 'j' and 'k'
+  {
+    "key": "j",
+    "command": "workbench.action.nextPane",
+    "when": "scmViewletVisible && !inputFocus"
+  },
+  {
+    "key": "k",
+    "command": "workbench.action.previousPane",
+    "when": "scmViewletVisible && !inputFocus"
+  },
+
+  //new
+  {
+    "key": "space h",
+    "command": "workbench.view.extension.project-manager",
+    "when": "vim.active && vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  }
 ]
