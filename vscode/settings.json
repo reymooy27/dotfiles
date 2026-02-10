@@ -45,125 +45,72 @@
     //         "editor.emmet.action.matchTag"
     //     ]
     // },
+
     {
-      "before": [
-        "<S-u>"
-      ],
-      "after": [
-        "<C-r>"
-      ]
+      "before": ["<S-u>"],
+      "after": ["<C-r>"]
     },
     {
-      "before": [
-        "<leader>",
-        "p"
-      ],
-      "commands": [
-        "workbench.action.showCommands"
-      ]
+      "before": ["<leader>", "p"],
+      "commands": ["workbench.action.showCommands"]
     },
     {
-      "before": [
-        "w",
-        "e"
-      ],
-      "commands": [
-        "workbench.action.files.save"
-      ]
+      "before": ["w", "e"],
+      "commands": ["workbench.action.files.save"]
     },
     {
-      "before": [
-        "e",
-        "w"
-      ],
-      "commands": [
-        "workbench.action.files.save"
-      ]
+      "before": ["e", "w"],
+      "commands": ["workbench.action.files.save"]
     },
     {
-      "before": [
-        "<C-a>"
-      ],
-      "after": [
-        "G",
-        "V",
-        "g",
-        "g"
-      ]
+      "before": ["<C-a>"],
+      "after": ["G", "V", "g", "g"]
     },
     {
-      "before": [
-        "]",
-        "e"
-      ],
-      "commands": [
-        "editor.action.marker.nextInFiles"
-      ],
+      "before": ["]", "e"],
+      "commands": ["editor.action.marker.nextInFiles"],
       "silent": true
     },
     {
-      "before": [
-        "[",
-        "e"
-      ],
-      "commands": [
-        "editor.action.marker.prevInFiles"
-      ],
+      "before": ["[", "e"],
+      "commands": ["editor.action.marker.prevInFiles"],
       "silent": true
     }
   ],
   "vim.insertModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        "k",
-        "j"
-      ],
-      "after": [
-        "<esc>"
-      ]
+      "before": ["k", "j"],
+      "after": ["<esc>"]
     },
     {
-      "before": [
-        "j",
-        "k"
-      ],
-      "after": [
-        "<esc>"
-      ]
+      "before": ["j", "k"],
+      "after": ["<esc>"]
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        "i",
-        "i"
-      ],
-      "after": [
-        "<esc>"
-      ]
+      "before": ["i", "i"],
+      "after": ["<esc>"]
     }
   ],
   "vim.visualModeKeyBindings": [
     {
-      "before": [
-        ">"
-      ],
-      "commands": [
-        "editor.action.indentLines"
-      ]
+      "before": ["i", "i"],
+      "after": ["<esc>"]
     },
     {
-      "before": [
-        "<"
-      ],
-      "commands": [
-        "editor.action.outdentLines"
-      ]
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
     },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    }
   ],
   "explorer.confirmDelete": false,
   "window.confirmBeforeClose": "never",
-  "editor.fontLigatures": true,
+  "window.confirmSaveUntitledWorkspace": false,
+  "editor.fontLigatures": false,
   "editor.minimap.enabled": false,
   "breadcrumbs.enabled": false,
   "git.autofetch": true,
@@ -184,12 +131,12 @@
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.defaultProfile.windows": "PowerShell",
-  "workbench.activityBar.location": "hidden",
+  "workbench.activityBar.location": "top",
   "workbench.editor.showTabs": "multiple",
   "window.density.editorTabHeight": "compact",
-  "window.menuBarVisibility": "hidden",
+  "window.menuBarVisibility": "toggle",
   "window.commandCenter": false,
-  "workbench.startupEditor": "none",
+  "workbench.startupEditor": "readme",
   "workbench.tips.enabled": false,
   "explorer.compactFolders": false,
   "explorer.confirmDragAndDrop": false,
@@ -200,15 +147,33 @@
   "files.insertFinalNewline": true,
   "editor.guides.indentation": false,
   "editor.scrollbar.horizontal": "hidden",
-  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.vertical": "auto",
   "editor.overviewRulerBorder": false,
   "workbench.activityBar.orientation": "vertical",
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.sideBar.location": "right",
-  // "workbench.statusBar.visible": false,
-  "window.title": "Nothing",
+  // "workbench.iconTheme": "material-icon-theme",
+  "workbench.sideBar.location": "left",
+  // "workbench.sideBar.location": "right",
+  "workbench.statusBar.visible": false,
+  "window.title": "${folderName} (${activeRepositoryBranchName}) - ${activeEditorShort} ${dirty}",
   "extensions.autoUpdate": true,
   "vim.wrapscan": true,
   "extensions.ignoreRecommendations": true,
-  "workbench.remoteIndicator.showExtensionRecommendations": false
+  "workbench.remoteIndicator.showExtensionRecommendations": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "window.customTitleBarVisibility": "windowed",
+  "window.titleBarStyle": "custom",
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash",
+  "diffEditor.codeLens": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.settings.showAISearchToggle": false,
+  "workbench.editor.closeOnFileDelete": true,
+  "workbench.editor.enablePreviewFromCodeNavigation": true,
+  "workbench.editor.highlightModifiedTabs": false,
+  "workbench.editor.showIcons": false,
+  "window.dialogStyle": "custom",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "python.createEnvironment.trigger": "off",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1"
 }

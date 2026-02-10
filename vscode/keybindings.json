@@ -1,5 +1,11 @@
 // Place your key bindings in this file to override the defaults
 [
+  // Antigravity AI Chat Focus Toggle
+  {
+    "key": "ctrl+'",
+    "command": "antigravity.toggleChatFocus"
+  },
+
   {
     "key": "ctrl+j",
     "command": "workbench.action.navigateDown"
@@ -35,32 +41,42 @@
   {
     "key": "space space",
     "command": "workbench.action.quickOpen",
-    "when": "vim.active && vim.mode != 'Insert' && (editorTextFocus || !inputFocus)"
+    "when": "!view.antigravity.agentPanel.visible && vim.active && vim.mode != 'Insert' && (editorTextFocus || !inputFocus)"
   },
   {
     "key": "space b d",
     "command": "workbench.action.closeActiveEditor",
-    "when": "vim.active && vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+    "when": "!view.antigravity.agentPanel.visible && vim.active && vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space d",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "!view.antigravity.agentPanel.visible && vim.active && vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
     "key": "space b o",
     "command": "workbench.action.closeOtherEditors",
-    "when": "vim.active && vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+    "when": "!view.antigravity.agentPanel.visible && vim.active && vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
     "key": "space f",
     "command": "revealInExplorer",
-    "when": "vim.active && vim.mode != 'Insert'&& (editorTextFocus || !inputFocus)"
+    "when": "!view.antigravity.agentPanel.visible && vim.active && vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
     "key": "space e",
     "command": "workbench.action.toggleSidebarVisibility",
-    "when": "vim.active && vim.mode != 'Insert'&& (editorTextFocus || !inputFocus) || (view.workbench.scm.visible == true)"
+    "when": "!view.antigravity.agentPanel.visible && vim.active && vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space x",
+    "command": "workbench.view.extensions",
+    "when": "!view.antigravity.agentPanel.visible && vim.active && vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
     "key": "space t",
     "command": "editor.emmet.action.matchTag",
-    "when": "vim.active && vim.mode != 'Insert'&& (editorTextFocus || !inputFocus)"
+    "when": "!view.antigravity.agentPanel.visible && vim.active && vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
     "key": "ctrl+j",
@@ -136,6 +152,11 @@
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
   {
+    "key": "space g d",
+    "command": "git.openChange",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
     "key": "ctrl-n",
     "command": "editor.action.addSelectionToNextFindMatch",
     "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
@@ -193,6 +214,8 @@
       ]
     }
   },
+
+  //terminal
   {
     "key": "ctrl+1",
     "command": "workbench.action.terminal.focusAtIndex1",
@@ -244,13 +267,12 @@
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+shift+t",
+    "key": "ctrl+n",
     "command": "workbench.action.terminal.new",
     "when": "terminalFocus"
   },
-  // add commanfto delete terminal
   {
-    "key": "ctrl+shift+d",
+    "key": "ctrl+x",
     "command": "workbench.action.terminal.kill",
     "when": "terminalFocus"
   },
@@ -314,7 +336,7 @@
     "command": "workbench.action.terminal.scrollRight",
     "when": "terminalFocus"
   },
-  // i want to make keybinding to navigate inside the git tab in vscode or tab like using 'j' and 'k'
+
   {
     "key": "j",
     "command": "workbench.action.nextPane",
@@ -325,11 +347,36 @@
     "command": "workbench.action.previousPane",
     "when": "scmViewletVisible && !inputFocus"
   },
-
-  //new
   {
     "key": "space h",
     "command": "workbench.view.extension.project-manager",
     "when": "vim.active && vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.terminal.resizePaneDown",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "workbench.action.terminal.resizePaneUp",
+    "when": "terminalFocus"
+  },
+
+  //AI chat view
+  {
+    "key": "ctrl+i",
+    "command": "workbench.action.chat.toggle",
+    "when": "!chatSetupDisabled && !chatSetupHidden"
   }
 ]
