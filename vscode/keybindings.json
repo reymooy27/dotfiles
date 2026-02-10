@@ -6,6 +6,7 @@
     "command": "antigravity.toggleChatFocus"
   },
 
+  // Window navigation
   {
     "key": "ctrl+j",
     "command": "workbench.action.navigateDown"
@@ -22,11 +23,6 @@
   {
     "key": "ctrl+l",
     "command": "workbench.action.navigateRight"
-  },
-  {
-    "key": "ctrl+/",
-    "command": "workbench.action.terminal.toggleTerminal"
-    // "when": "terminalFocus"
   },
   // {
   //   "key": "ctrl+/",
@@ -136,6 +132,69 @@
     "command": "workbench.action.findInFiles",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
+
+  //git
+  {
+    "key": "space g i",
+    "command": "editor.action.dirtydiff.next",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space g k",
+    "command": "workbench.action.editor.nextChange",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  // 3. Navigasi ke perubahan (Hunk) sebelumnya dalam file
+  {
+    "key": "space g j",
+    "command": "workbench.action.editor.previousChange",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space g x",
+    "command": "git.clean",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space g a",
+    "command": "git.viewChanges",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space g p",
+    "command": "git.push",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space g l",
+    "command": "git.pull",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space g c",
+    "command": "git.commit",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space g f",
+    "command": "git.stageFile",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space g u",
+    "command": "git.unstageFile",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space g shift+s",
+    "command": "git.stageAll",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space g s",
+    "command": "git.unstageAll",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
   {
     "key": "space g g",
     "command": "workbench.view.scm",
@@ -161,7 +220,18 @@
     "command": "editor.action.addSelectionToNextFindMatch",
     "when": "(vim.mode == 'Normal' || vim.mode == 'Visual') && (editorTextFocus || !inputFocus)"
   },
+
   //file explorer
+  {
+    "key": "ctrl+e",
+    "command": "workbench.action.increaseViewSize",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadOnly && !inputFocus"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.decreaseViewSize",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadOnly && !inputFocus"
+  },
   {
     "key": "r",
     "command": "renameFile",
@@ -216,6 +286,11 @@
   },
 
   //terminal
+  {
+    "key": "ctrl+/",
+    "command": "workbench.action.terminal.toggleTerminal"
+    // "when": "terminalFocus"
+  },
   {
     "key": "ctrl+1",
     "command": "workbench.action.terminal.focusAtIndex1",
@@ -347,11 +422,11 @@
     "command": "workbench.action.previousPane",
     "when": "scmViewletVisible && !inputFocus"
   },
-  {
-    "key": "space h",
-    "command": "workbench.view.extension.project-manager",
-    "when": "vim.active && vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
-  },
+  // {
+  //   "key": "space h",
+  //   "command": "workbench.view.extension.project-manager",
+  //   "when": "vim.active && vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  // },
   {
     "key": "ctrl+o",
     "command": "workbench.action.terminal.focusPrevious",

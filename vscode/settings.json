@@ -25,14 +25,14 @@
   "editor.codeActionsOnSave": {
     "source.addMissingImports.ts": "always",
     "source.fixAll.ts": "always",
-    "source.sortImports": "always"
+    "source.sortImports": "always",
   },
   "editor.lineNumbers": "relative",
   "vim.handleKeys": {
     "<C-d>": true,
     "<C-u>": true,
     "<C-s>": false,
-    "<C-z>": false
+    "<C-z>": false,
   },
   "vim.normalModeKeyBindings": [],
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -48,64 +48,64 @@
 
     {
       "before": ["<S-u>"],
-      "after": ["<C-r>"]
+      "after": ["<C-r>"],
     },
     {
       "before": ["<leader>", "p"],
-      "commands": ["workbench.action.showCommands"]
+      "commands": ["workbench.action.showCommands"],
     },
     {
       "before": ["w", "e"],
-      "commands": ["workbench.action.files.save"]
+      "commands": ["workbench.action.files.save"],
     },
     {
       "before": ["e", "w"],
-      "commands": ["workbench.action.files.save"]
+      "commands": ["workbench.action.files.save"],
     },
     {
       "before": ["<C-a>"],
-      "after": ["G", "V", "g", "g"]
+      "after": ["G", "V", "g", "g"],
     },
     {
       "before": ["]", "e"],
       "commands": ["editor.action.marker.nextInFiles"],
-      "silent": true
+      "silent": true,
     },
     {
       "before": ["[", "e"],
       "commands": ["editor.action.marker.prevInFiles"],
-      "silent": true
-    }
+      "silent": true,
+    },
   ],
   "vim.insertModeKeyBindingsNonRecursive": [
     {
       "before": ["k", "j"],
-      "after": ["<esc>"]
+      "after": ["<esc>"],
     },
     {
       "before": ["j", "k"],
-      "after": ["<esc>"]
-    }
+      "after": ["<esc>"],
+    },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       "before": ["i", "i"],
-      "after": ["<esc>"]
-    }
+      "after": ["<esc>"],
+    },
   ],
   "vim.visualModeKeyBindings": [
     {
       "before": ["i", "i"],
-      "after": ["<esc>"]
+      "after": ["<esc>"],
     },
     {
       "before": [">"],
-      "commands": ["editor.action.indentLines"]
+      "commands": ["editor.action.indentLines"],
     },
     {
       "before": ["<"],
-      "commands": ["editor.action.outdentLines"]
-    }
+      "commands": ["editor.action.outdentLines"],
+    },
   ],
   "explorer.confirmDelete": false,
   "window.confirmBeforeClose": "never",
@@ -120,11 +120,11 @@
   "editor.fontSize": 14,
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "accessibility.signals.terminalBell": {
-    "sound": "off"
+    "sound": "off",
   },
   "accessibilityjsignals.terminalCommandFailed": {
     "announcement": "off",
-    "sound": "off"
+    "sound": "off",
   },
   "vim.commandLineModeKeyBindingsNonRecursive": [],
   "terminal.explorerKind": "external",
@@ -175,5 +175,7 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.hideUnchangedRegions.enabled": true,
   "python.createEnvironment.trigger": "off",
-  "gitlens.ai.vscode.model": "copilot:gpt-4.1"
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "git.blame.statusBarItem.enabled": true,
+  "scm.diffDecorations": "all",
 }
