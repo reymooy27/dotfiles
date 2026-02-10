@@ -23,3 +23,6 @@ Dependencies
 - app launcher : wofi
 - app bar : waybar
 
+# VSCode
+- keybindings.json
+- settings.json
