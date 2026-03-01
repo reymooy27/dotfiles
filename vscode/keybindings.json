@@ -122,6 +122,12 @@
     "command": "editor.action.rename",
     "when": "vim.mode == 'Normal' && editorTextFocus"
   },
+  //baru
+  {
+    "key": "space c f",
+    "command": "editor.actions.findWithArgs",
+    "when": "vim.mode == 'Normal' && editorTextFocus"
+  },
   {
     "key": "space c s",
     "command": "workbench.action.gotoSymbol",
@@ -130,6 +136,11 @@
   {
     "key": "space /",
     "command": "workbench.action.findInFiles",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space z",
+    "command": "workbench.action.toggleZenMode",
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
   },
 
